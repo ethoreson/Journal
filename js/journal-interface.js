@@ -9,6 +9,8 @@ $(document).ready(function() {
     var numberOfWords = newEntry.numberOfWords(body);
     var numberOfVowels = newEntry.getVowels(body);
     var numberOfConsonants = newEntry.getConsonants(body);
-      $('#post').append("<li>" + element + "</li>");
+      $('#post').append("<li>Number of Words: " + numberOfWords + "</li>");
+      $('#post').append("<li>Number of Vowels: " + numberOfVowels + "</li>");
+      $('#post').append("<li>Number of Consonants: " + numberOfConsonants + "</li>");
   });
 });

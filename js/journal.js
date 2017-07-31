@@ -1,19 +1,20 @@
 function Journal() {
 }
 
-Journal.prototype.numberOfWords(entry) {
+Journal.prototype.numberOfWords = function(entry) {
   return entry.split(' ').length;
 }
 
-Journal.prototype.getVowels(entry) {
+Journal.prototype.getVowels = function(entry) {
   var count = entry.match(/[aeiou]/gi);
   return count === null ? 0 : count.length;
 }
 
-Journal.prototype.getConsonants(entry) {
+Journal.prototype.getConsonants = function(entry) {
   var entry = entry.replace(/\s+/g, '');
+  var entry = entry.replace(/[^a-zA-Z]/gi, '')
   var countString = entry.split('').length;
-  var count = (countString - getVowels(entry));
+  var count = (countString - this.getVowels(entry));
   return count;
 }
 
